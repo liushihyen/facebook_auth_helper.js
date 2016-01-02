@@ -4,8 +4,10 @@ var facebookAuthModule = ( function() {
 
 		var deferred = $.Deferred();
 
-		$utils.loadSDK = function() {
-			// Load the SDK asynchronously
+		$utils.loadSDK = function(setting) {
+
+			setting.locale = typeof setting.locale !== 'undefined' ? setting.locale : 'en_US';
+			// load js SDK
 			( function(d, s, id) {
 					var js,
 					    fjs = d.getElementsByTagName(s)[0];
@@ -13,7 +15,7 @@ var facebookAuthModule = ( function() {
 						return;
 					js = d.createElement(s);
 					js.id = id;
-					js.src = "//connect.facebook.net/en_US/sdk.js";
+					js.src = "//connect.facebook.net/" + setting.locale + "/sdk.js";
 					fjs.parentNode.insertBefore(js, fjs);
 
 					console.dir('Load the SDK asynchronously');
@@ -42,9 +44,22 @@ var facebookAuthModule = ( function() {
 			return this;
 		};
 
-		$utils.doFbAuth = function() {
+		$utils.doFbAuth = function(setting) {
 
 			var self = this;
+
+			setting = typeof setting !== 'undefined' ? setting : {
+				scope : ['public_profile', 'email']
+			};
+
+			var defaultScope = [];
+			defaultScope.push('public_profile');
+			defaultScope.push('email');
+
+			if ( typeof setting.scpoe === 'object' && setting.scpoe.length === 0) {
+				setting.scpoe = defaultScope;
+			}
+
 			var dfd = new $.Deferred();
 
 			// 檢查使用者的臉書登入狀況以及是否已經授權奧創
@@ -52,12 +67,7 @@ var facebookAuthModule = ( function() {
 
 				if (response.status === 'connected') {
 					// 如果使用者已經登入Facebook而且也已經授權過奧創
-
-					var user = self.getUser(['id', 'name', 'cover']);
-
-					user.then(function(response) {
-						dfd.resolve(response);
-					});
+					dfd.resolve(self, response);
 
 				} else if (response.status === 'not_authorized') {
 					// 使用者已經登入Facebook但尚未受奧創控制
@@ -65,17 +75,15 @@ var facebookAuthModule = ( function() {
 
 						if (response.status === 'connected') {
 							// 使用者完成對奧創的授權
-							var user = self.getUser(['id', 'name', 'cover']);
-							user.then(function(response) {
-								dfd.resolve(response);
-							});
+
+							dfd.resolve(self, response);
 
 						} else if (response.status === 'not_authorized') {
 							// 使用者不對奧創授權
 						} else {
 						}
 					}, {
-						scope : 'public_profile,email',
+						scope : setting.scope.join(','),
 						return_scopes : true
 					});
 
@@ -166,4 +174,4 @@ var facebookAuthModule = ( function() {
 		};
 
 		return $utils;
-	}(window)); 
+	}(window));

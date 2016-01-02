@@ -9,10 +9,12 @@
 初始化
 
 ```
-facebookAuthModule.loadSDK().initSDK({
-	appId : '這裏放你的Facebook app id',
-	version : 'v2.5'
-});
+facebookAuthModule.loadSDK({
+		locale : 'en_US'
+	}).initSDK({
+		appId : '686219444844546',
+		version : 'v2.5'
+	});
 ```
 
 驗證使用者是否授權你的App，如果授權過，便會傳回使用者的資料
@@ -20,8 +22,13 @@ facebookAuthModule.loadSDK().initSDK({
 ```
 $('#js-doFbLogin').on('click', '', {}, function(event) {
 	event.preventDefault();
-	facebookAuthModule.doFbAuth().then(function(user) {
-		console.dir(user);
+	facebookAuthModule.doFbAuth({
+		scope : ['public_profile', 'email']
+	}).then(function(util, response) {
+		var userDf = util.getUser(['id', 'email', 'cover', 'devices']);
+		userDf.then(function(response) {
+			console.dir(response);
+		});
 	});
 });
 ``` 
