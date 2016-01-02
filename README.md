@@ -12,7 +12,7 @@
 facebookAuthModule.loadSDK({
 		locale : 'en_US'
 	}).initSDK({
-		appId : '686219444844546',
+		appId : 'place your Facebook app id here',
 		version : 'v2.5'
 	});
 ```
