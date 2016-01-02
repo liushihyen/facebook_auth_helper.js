@@ -6,7 +6,7 @@
 
 ### 使用方法
 
-#### 初始化
+初始化
 
 ```
 facebookAuthModule.loadSDK().initSDK({
@@ -15,7 +15,7 @@ facebookAuthModule.loadSDK().initSDK({
 });
 ```
 
-#### 驗證使用者是否授權你的App，如果授權過，便會傳回使用者的資料
+驗證使用者是否授權你的App，如果授權過，便會傳回使用者的資料
 
 ```
 $('#js-doFbLogin').on('click', '', {}, function(event) {
