@@ -19,6 +19,8 @@ facebookAuthModule.loadSDK({
 
 驗證使用者是否授權你的App，如果授權過，便會傳回使用者的資料
 
+可以使用的Facebook Graph API User欄位請[參閱這裡](https://developers.facebook.com/docs/graph-api/reference/user#Reading)
+
 ```
 $('#js-doFbLogin').on('click', '', {}, function(event) {
 	event.preventDefault();
