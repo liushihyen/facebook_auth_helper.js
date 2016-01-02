@@ -1,6 +1,8 @@
 # Login with Facebook Javascript SDK helper v1.0.0
 
-相依在jQuery上（拍謝）
+### 相依
+
+* jQuery（只能跪了...）
 
 使用方法
 
