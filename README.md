@@ -10,11 +10,11 @@
 
 ```
 facebookAuthModule.loadSDK({
-		locale : 'en_US'
-	}).initSDK({
-		appId : 'place your Facebook app id here',
-		version : 'v2.5'
-	});
+	locale : 'en_US'
+}).initSDK({
+	appId : 'place your Facebook app id here',
+	version : 'v2.5'
+});
 ```
 
 驗證使用者是否授權你的App，如果授權過，便會傳回使用者的資料
