@@ -1,14 +1,14 @@
 # Login with Facebook Javascript SDK helper v1.0.0
 
-### 相依
+### Features
+
+* Login with Facebook
+
+### System requirement
 
 * jQuery（只能跪了...）
 
-### 安裝
-
-bower install urFacebook
-
-### 使用方法
+### Usage
 
 初始化
 
