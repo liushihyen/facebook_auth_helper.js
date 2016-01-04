@@ -1,5 +1,6 @@
 /**
  * @authon Sean Liu
+ * @copyright YouMeb
  */
 var facebookAuthModule = ( function() {
 
@@ -27,6 +28,9 @@ var facebookAuthModule = ( function() {
 			return this;
 		};
 
+		/**
+		 * @param {Object} setting
+		 */
 		$utils.initSDK = function(setting) {
 
 			setting = typeof setting !== 'undefined' ? setting : {
@@ -47,6 +51,9 @@ var facebookAuthModule = ( function() {
 			return this;
 		};
 
+		/**
+		 * @param {Object} setting
+		 */
 		$utils.doFbAuth = function(setting) {
 
 			var self = this;
@@ -97,6 +104,9 @@ var facebookAuthModule = ( function() {
 			return dfd;
 		};
 
+		/**
+		 * @param {Object[]} fields
+		 */
 		$utils.getUser = function(fields) {
 
 			// 讀取Facebook Open Graph user的預設資料欄位
