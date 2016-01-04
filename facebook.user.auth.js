@@ -2,7 +2,7 @@
  * @authon Sean Liu
  * @copyright YouMeb
  */
-var facebookAuthModule = ( function() {
+var facebookAuthModule = ( function(window) {
 
 		var $utils = {};
 

@@ -1,0 +1,14 @@
+{
+  "name": "urFacebook",
+  "homepage": "https://github.com/liushihyen/urFacebook",
+  "authors": [
+    "liushihyen <sean.liu@youmeb.com>"
+  ],
+  "description": "urAD's Facebook Javascript SDK helper",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "urAD"
+  ],
+  "license": "MIT"
+}
