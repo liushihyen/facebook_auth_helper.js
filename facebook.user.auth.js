@@ -57,6 +57,8 @@ var facebookAuthModule = ( function(window) {
 		$utils.doFbAuth = function(setting) {
 
 			var self = this;
+			
+			console.dir(setting);
 
 			setting = typeof setting !== 'undefined' ? setting : {
 				scope : [
@@ -64,6 +66,8 @@ var facebookAuthModule = ( function(window) {
 					'email'
 				]
 			};
+			
+			console.dir(setting);
 
 			var defaultScope = [];
 			defaultScope.push('public_profile');
@@ -72,7 +76,7 @@ var facebookAuthModule = ( function(window) {
 			if ( typeof setting.scpoe === 'object' && setting.scpoe.length === 0) {
 				setting.scpoe = defaultScope;
 			}
-			console.dir(setting.scpoe);
+			console.dir(setting);
 
 			var dfd = new $.Deferred();
 
