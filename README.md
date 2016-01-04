@@ -1,4 +1,4 @@
-# Login with Facebook Javascript SDK helper v1.0.0
+# urAD Facebook Jsvascript API v1.0.0
 
 ### Features
 
@@ -10,7 +10,7 @@
 
 ### Usage
 
-初始化
+Initialize
 
 ```
 facebookAuthModule.loadSDK({
@@ -38,3 +38,6 @@ $('#js-doFbLogin').on('click', '', {}, function(event) {
 	});
 });
 ``` 
+### TODO
+
+* user's friend list
