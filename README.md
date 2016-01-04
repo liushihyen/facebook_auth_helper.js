@@ -4,6 +4,10 @@
 
 * jQuery（只能跪了...）
 
+### 安裝
+
+bower install urFacebook
+
 ### 使用方法
 
 初始化
