@@ -1,3 +1,6 @@
+/**
+ * @authon Sean Liu
+ */
 var facebookAuthModule = ( function() {
 
 		var $utils = {};
@@ -174,4 +177,4 @@ var facebookAuthModule = ( function() {
 		};
 
 		return $utils;
-	}(window)); 
+	}(window));
